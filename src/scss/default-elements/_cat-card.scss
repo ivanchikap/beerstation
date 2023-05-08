@@ -1,0 +1,46 @@
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 320px;
+  padding-top: 18px;
+  color: #fff;
+  background-color: $secondary-color;
+  border-radius: 16px;
+  box-shadow: -6px 6px 6px rgba(0, 0, 0, .2);
+  @extend .bg-radial;
+  overflow: hidden;
+  cursor: pointer;
+  transition: scale .2s cubic-bezier(.32,.08,.24,1), box-shadow .2s cubic-bezier(.32,.08,.24,1), scale .2s cubic-bezier(.32,.08,.24,1),color .2s cubic-bezier(.32,.08,.24,1);
+
+  &:hover {
+    scale: 1.05;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, .18);
+  }
+
+  svg {
+    height: 100%;
+    width: 37%;
+    margin: 0 auto;
+    fill: rgb(#000, .7);
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: $montserrat;
+    text-transform: uppercase;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 0 0 16px 16px;
+    min-height: 98.4px;
+  }
+
+  h2, h3, h4, h5 {
+    font-size: 26px;
+    text-align: center;
+    padding: 10px;
+  }
+}

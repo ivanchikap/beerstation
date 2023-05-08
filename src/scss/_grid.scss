@@ -3,6 +3,10 @@
   max-width: 1230px;
   margin: 0 auto;
 
+  &--header {
+    max-width: 1430px;
+  }
+
   @include laptop {
     max-width: 960px;
   }

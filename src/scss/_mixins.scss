@@ -30,11 +30,11 @@
   }
 }
 
-@mixin bg-radial {
+.bg-radial {
   border-radius: 16px;
-  background-color: rgba(248,248,252,.85);
+  //background-color: rgba(248,248,252,.85);
   backdrop-filter: blur(15px) saturate(86%);
-  background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.85) 0,hsla(0,0%,96.1%,.13) 183%);
+  background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.6) 0,hsla(0,0%,96.1%,.13) 183%);
 }
 
 .icon {

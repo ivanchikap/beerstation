@@ -1,6 +1,9 @@
 .header {
   padding: 20px 0;
   font-size: 20px;
+  background-color: #fff;
+  box-shadow: -10px 10px 10px rgba(#000, .3);
+  border-radius: 0 0 16px 16px;
 
   &__inner {
     display: flex;
@@ -37,6 +40,16 @@
 
       svg {
         fill: $secondary-color;
+      }
+    }
+
+    .footer & {
+      &:hover {
+        color: #ccc;
+
+        svg {
+          fill: #ccc;
+        }
       }
     }
   }
