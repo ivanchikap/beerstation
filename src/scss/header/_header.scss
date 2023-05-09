@@ -1,5 +1,5 @@
 .header {
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 20px;
   background-color: #fff;
   box-shadow: -10px 10px 10px rgba(#000, .3);
@@ -9,31 +9,97 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 22px;
+    font-family: $montserrat;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include mobile-large {
+      font-size: 18px;
+    }
   }
 
   &__info {
-    width: calc(80% - 130px);
-    padding: 0 5px;
+    max-width: calc(80% - 130px);
+    padding: 0 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    font-family: $montserrat;
     overflow: hidden;
 
-    span {
-      @extend .text-nowrap;
+    @include laptop {
+      flex-direction: column;
     }
 
-    > a {
-      max-width: 50%;
+    @include tablet {
+      max-width: calc(78% - 120px);
+    }
+
+    @include mobile-large {
+      max-width: calc(78% - 100px);
+      align-items: start;
+      padding: 0 8px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      padding-right: 0;
     }
   }
 
-  &__phone {
-    padding-right: 20px;
+  &__icon {
+    height: 24px;
+    margin-right: 6px;
+    fill: #333;
+    flex-shrink: 0;
+    transition: fill .2s linear;
+
+    @include tablet {
+      height: 22px;
+    }
+
+    @include mobile-large {
+      height: 20px;
+    }
+  }
+
+  &__item {
     @extend .flex-items-center;
     transition: color .2s linear;
+    padding-right: 20px;
+    max-width: 50%;
+
+    @include laptop {
+      padding-right: 0;
+      max-width: 100%;
+    }
+
+    &:first-child {
+      @include laptop {
+        margin-bottom: 18px;
+      }
+      @include mobile-large {
+        margin-bottom: 12px;
+      }
+      span {
+        @extend .text-nowrap;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+      padding-left: 20px;
+      border-left: 1px dashed #333;
+      max-width: 60%;
+
+      @include laptop {
+        border-left: none;
+        padding-left: 0;
+        max-width: 100%;
+      }
+    }
 
     &:hover {
       color: $secondary-color;
@@ -54,52 +120,16 @@
     }
   }
 
-  &__phone-icon {
-    @extend .icon;
-  }
-
-  &__location {
+  &__time {
     @extend .flex-items-center;
-    padding-left: 20px;
-    border-left: 1px dashed #333;
-    transition: color .2s linear;
-    span {
-      &:first-child {
-        display: block;
-        font-weight: 500;
-        font-family: $montserrat;
-      }
+    max-width: 20%;
+
+    @include tablet {
+      max-width: 22%;
     }
 
-    &:hover {
-      color: $secondary-color;
-
-      svg {
-        fill: $secondary-color;
-      }
-    }
-  }
-
-  &__location-icon {
-    @extend .icon;
-  }
-
-  &__routine {
-    @extend .flex-items-center;
-    width: 20%;
-    overflow: hidden;
-  }
-
-  &__routine-icon {
-    height: 40px;
-    fill: $primary-color;
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-
-  &__routine-val {
-    p {
-      @extend .text-nowrap;
+    @include mobile {
+      display: none;
     }
   }
 }

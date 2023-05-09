@@ -37,14 +37,6 @@
   background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.6) 0,hsla(0,0%,96.1%,.13) 183%);
 }
 
-.icon {
-  height: 20px;
-  margin-right: 6px;
-  fill: #333;
-  flex-shrink: 0;
-  transition: fill .2s linear;
-}
-
 .flex-items-center {
   display: flex;
   align-items: center;
