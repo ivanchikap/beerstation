@@ -27,14 +27,3 @@ arrow.addEventListener('click', () => {
      block: 'start',
     });
 })
-
-
-
-// window.addEventListener('scroll', (e) => {
-//     console.log(document.documentElement.scrollTop);
-// })
-
-//element.scrollIntoView({
-//  behavior: 'smooth',
-//  block: 'end',
-//});

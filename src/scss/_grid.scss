@@ -1,6 +1,6 @@
 .container {
   padding: 0 15px;
-  max-width: 1230px;
+  max-width: 1470px;
   margin: 0 auto;
 
   &--header {
@@ -22,6 +22,10 @@
       max-width: 100%;
       padding: 0 10px;
     }
+  }
+
+  @include widescreen {
+    max-width: 1230px;
   }
 
   @include laptop {
