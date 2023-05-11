@@ -30,6 +30,7 @@
   &__beertype {
     color: $secondary-color;
     margin: 4px 0;
+    min-height: 48px;
   }
 
   &__title {
@@ -39,11 +40,50 @@
     min-height: 58px;
   }
 
+  &__testimonial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin: 6px  -10px;
+    padding: 12px 0;
+    border-top: 1px dashed $gray;
+    border-bottom: 1px dashed $gray;
+  }
+
+  &__test-item {
+    width: 33.3333%;
+    padding: 0 10px;
+  }
+
+  &__test-value {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  &__test-progress {
+    position: relative;
+    height: 8px;
+    background-color: #bbb;
+  }
+
+  &__test-progress-value {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: $primary-color;
+  }
+
   &__price {
     font-size: 34px;
     line-height: 1;
     font-weight: 600;
-    margin-top: 14px;
+    margin-top: 12px;
+
     span {
       display: block;
 

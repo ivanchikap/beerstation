@@ -13,7 +13,7 @@
     margin-bottom: 18px;
   }
 
-  >ul, div, form {
+  >ul, >div, >form {
     border-top: 1px solid #dde3e8;
     padding: 15px 0;
   }
@@ -57,5 +57,41 @@
     border: 1px solid #d7d7d7;
     border-radius: 6px;
     padding: 6px 12px;
+  }
+
+
+  &__list-icons {
+    cursor: pointer;
+
+    &.clicked {
+      svg {
+        fill: $primary-color;
+      }
+    }
+
+    svg {
+      width: 14px;
+      padding-top: 4px;
+
+      &:hover {
+        fill: $primary-color;
+      }
+    }
+
+    &.up {
+      svg {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
+    &.down {
+      svg {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
   }
 }
