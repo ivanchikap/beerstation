@@ -1,0 +1,103 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  padding: 22px;
+  border: 1px solid #d7d7d7;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+
+  &__sort {
+    width: 33.3333%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__sort-direction {
+    cursor: pointer;
+    margin-right: 8px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      fill: #222;
+      transition: fill .2s linear;
+
+      &:hover {
+        fill: $secondary-color;
+      }
+    }
+    
+    &.down {
+      svg {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    &.up {
+      svg {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__input {
+    width: 33.3333%;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $gray;
+    border-right: 1px solid $gray;
+    background-color: transparent;
+    padding: 12px 42px;
+    font-family: 'Roboto', sans-serif;
+    color: #707070;
+    font-size: 15px;
+
+    input {
+      width: 100%;
+      font-size: 20px;
+      padding-bottom: 6px;
+      margin-left: 12px;
+      border-bottom: 2px dashed $gray;
+
+      &:focus {
+        border-color: $secondary-color;
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      fill: #222;
+    }
+  }
+
+  &__filter {
+    padding-left: 22px;
+    width: 33.3333%;
+  }
+
+  &__select {
+    padding: 4px  8px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    margin-left: 8px;
+
+    &:focus {
+      border-color: $secondary-color;
+    }
+
+    &:focus-visible {
+      border-color: $secondary-color;
+      outline: none;
+    }
+  }
+}

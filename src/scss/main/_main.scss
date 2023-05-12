@@ -1,11 +1,9 @@
 .main {
-  display: flex;
 
   &__info {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -4px;
-    order: 1;
   }
 
   &__col {
@@ -16,11 +14,5 @@
     &:not(:nth-child(-n + 3)) {
       margin-top: 8px;
     }
-  }
-
-  &__sidebar {
-    order: 0;
-    width: 300px;
-    padding-right: 20px;
   }
 }
