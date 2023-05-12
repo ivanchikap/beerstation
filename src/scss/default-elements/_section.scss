@@ -1,6 +1,10 @@
 .section {
   padding: 40px 0;
 
+  &--nopading {
+    padding: 0;
+  }
+
   &__title {
     text-align: center;
     font-family: $montserrat;

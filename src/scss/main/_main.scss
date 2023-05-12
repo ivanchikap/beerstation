@@ -3,16 +3,33 @@
   &__info {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -4px;
+    margin: 0 -6px;
   }
 
   &__col {
     display: flex;
     width: 33.3333%;
-    padding: 0 4px;
+    padding: 0 6px;
 
     &:not(:nth-child(-n + 3)) {
-      margin-top: 8px;
+      margin-top: 12px;
+    }
+
+    @include tablet {
+      width: 50%;
+
+
+      &:not(:nth-child(-n + 2)) {
+        margin-top: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+
+      &:not(:nth-child(-n + 1)) {
+        margin-top: 12px;
+      }
     }
   }
 }
