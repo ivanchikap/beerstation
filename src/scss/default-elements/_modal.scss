@@ -8,6 +8,15 @@
   margin: 0 auto;
   border-radius: 12px;
 
+  @include tablet {
+    flex-direction: column;
+    max-height: 90vh;
+  }
+
+  @include mobile {
+    width: 96%;
+  }
+
   &__close {
     cursor: pointer;
     width: 30px;
@@ -26,6 +35,21 @@
   &__img {
     width: 40%;
     min-height: 100%;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+
+    @include tablet {
+      width: 70%;
+      border-radius: 0;
+      min-height: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    @include mobile-large {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+    }
 
     img {
       width: 100%;
@@ -40,6 +64,32 @@
     padding: 20px;
     max-height: 100%;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc darken($secondary-color, 10%);
+
+    /* Работает в Chrome, Edge и Safari */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ccc;
+      padding: 4px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darken($secondary-color, 10%);
+      border-radius: 28px;
+      //border: 3px solid orange;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      padding: 14px 10px;
+    }
   }
 
   &__title {
@@ -47,12 +97,20 @@
     font-family: $montserrat;
     font-weight: 600;
     padding-right: 16px;
+
+    @include mobile {
+      font-size: 30px;
+    }
   }
 
   &__beertype {
     @extend .card__beertype;
     font-size: 20px;
     min-height: 1px;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__price-wrapper {
@@ -77,10 +135,18 @@
   }
   &__test-title {
     font-size: 20px;
+
+    @include mobile {
+      font-size: 16px;
+    }
   }
   &__test-value {
     @extend .card__test-value;
     font-size: 22px;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
   &__test-progress {
     @extend .card__test-progress;
