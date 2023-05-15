@@ -13,6 +13,10 @@ body {
   font-size: 1.6rem;
   line-height: 1.2;
   background-color:#efefef;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 
 main {

@@ -8,6 +8,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="img/favicon.png" type="image/png">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.css" integrity="sha512-C+KPK958JmUdU8B9SVr8YpEZtQ1T1XrFX/OLvE/lt336DFWXFHL5Y9/tUewMEU+Uy3dUAS363XXLdBine0WDyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -102,7 +103,7 @@
               <label class="filter__sort-by">
                Сортувати за:
                 <select class="filter__select" name="sort-select">
-                  <option value="price" >Ціною</option>
+                  <option value="price">Ціною</option>
                   <option value="abv">Міцністю</option>
                   <option value="ibu">Гіркотою</option>
                   <option value="density">Щільністю</option>
@@ -128,11 +129,11 @@
             <!--/filter__filter-->
           </div>
           <!--/filter-->
-          <div class="main__info">
+          <div class="main__info" id="img-container">
             <div class="main__col">
               <div class="card">
                 <a class="card__img" href="#">
-                  <img src="img/beer0.jpg" alt="beer0">
+                  <img class="js-img" src="img/beer0.jpg" alt="beer0">
                 </a>
                 <div class="card__info">
                   <div class="card__main-info">
@@ -185,7 +186,7 @@
             <div class="main__col">
               <div class="card">
                 <a class="card__img" href="#">
-                  <img src="img/beer1.jpg" alt="beer0">
+                  <img class="js-img" src="img/beer1.jpg" alt="beer0">
                 </a>
                 <div class="card__info">
                   <div class="card__main-info">
@@ -239,7 +240,7 @@
             <div class="main__col">
               <div class="card">
                 <a class="card__img" href="#">
-                  <img src="img/beer2.jpg" alt="beer2">
+                  <img class="js-img" src="img/beer2.jpg" alt="beer2">
                 </a>
                 <div class="card__info">
                   <div class="card__main-info">
@@ -292,7 +293,7 @@
             <div class="main__col">
               <div class="card">
                 <a class="card__img" href="#">
-                  <img src="img/beer2.jpg" alt="beer2">
+                  <img class="js-img" src="img/beer2.jpg" alt="beer2">
                 </a>
                 <div class="card__info">
                   <div class="card__main-info">
@@ -364,5 +365,7 @@
   <div class="to-top hidden" id="to-top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M256 504c137 0 248-111 248-248S393 8 256 8 8 119 8 256s111 248 248 248zm0-448c110.5 0 200 89.5 200 200s-89.5 200-200 200S56 366.5 56 256 145.5 56 256 56zm20 328h-40c-6.6 0-12-5.4-12-12V256h-67c-10.7 0-16-12.9-8.5-20.5l99-99c4.7-4.7 12.3-4.7 17 0l99 99c7.6 7.6 2.2 20.5-8.5 20.5h-67v116c0 6.6-5.4 12-12 12z"/></svg>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.js" integrity="sha512-jIc3kBeyfyLXBTmzUIXnbGiVK2wgWGcDIkJwkFW4bQ6v2h/piOKLwIfy3wOmKHWIu8DgYSKVth0DMUvExMYcOw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
