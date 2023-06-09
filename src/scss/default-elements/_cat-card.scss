@@ -1,4 +1,5 @@
 .cat-card {
+  $root: &;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -17,6 +18,16 @@
   &:hover {
     scale: 1.05;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, .18);
+  }
+
+  &.active {
+    scale: 1.05;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, .18);
+    text-decoration: underline;
+
+    svg {
+      fill: rgba($primary-color, .7);
+    }
   }
 
   @include laptop {
@@ -46,6 +57,7 @@
     width: 37%;
     margin: 0 auto;
     fill: rgb(#000, .7);
+    transition: fill .2s linear;
 
     @include laptop {
       width: 33%;

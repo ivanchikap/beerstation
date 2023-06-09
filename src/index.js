@@ -3,3 +3,4 @@ import './scss/style.scss';
 import './js/sort';
 import './js/test';
 import './js/modal';
+import './js/tabs';

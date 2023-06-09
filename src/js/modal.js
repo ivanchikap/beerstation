@@ -1,3 +1,5 @@
+import Siema from 'siema';
+
 const cards = document.querySelectorAll('.card');
 
 
@@ -29,9 +31,28 @@ function onCardClick(e) {
         <div class="modal">
             <svg class="modal__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/>
             </svg>
-            <div class="modal__img">
-                <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
+            <div class="modal__left">
+                <div class="siema">
+                <div class="modal__img">
+                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
+                    </div>
+                     <div class="modal__img">
+                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
+                    </div>
+                     <div class="modal__img">
+                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
+                    </div>     
+                </div>   
+                <div class="modal__angle modal__angle--left">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                    </svg>
+                </div>
+                <div class="modal__angle modal__angle--right">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+                    </svg>
+                </div>
             </div>
+            
             <div class="modal__right">
                 <h2 class="modal__title">${title}</h2>
                 <h3 class="modal__beertype">Уманьпиво, світле нефільтроване</h3>
@@ -78,18 +99,28 @@ function onCardClick(e) {
     `, {
         onShow: (instance) => {
             instance.element().querySelector('.modal__close').onclick = instance.close
-            document.onkeydown = function(evt) {
+            document.onkeydown = function (evt) {
                 evt = evt || window.event;
                 let isEscape = false;
-                if ( "key" in evt ) {
-                    isEscape = ( evt.key === "Escape" || evt.key === "Esc" );
+                if ("key" in evt) {
+                    isEscape = (evt.key === "Escape" || evt.key === "Esc");
                 } else {
-                    isEscape = ( evt.keyCode === 27 );
+                    isEscape = (evt.keyCode === 27);
                 }
-                if ( isEscape ) {
+                if (isEscape) {
                     instance.close();
                 }
             };
+
+            const angleLeft = instance.element().querySelector('.modal__angle--left');
+            const angleRight = instance.element().querySelector('.modal__angle--right');
+
+            angleLeft.addEventListener('click', () => {
+                siema.prev(1);
+            })
+            angleRight.addEventListener('click', () => {
+                siema.next(1);
+            })
         },
         onClose: (instance) => {
             body.classList.remove('no-scroll')
@@ -97,6 +128,25 @@ function onCardClick(e) {
     })
 
     instance.show();
+
+    const siema = new Siema({
+        selector: '.siema',
+        duration: 200,
+        easing: 'ease-out',
+        perPage: 1,
+        startIndex: 0,
+        draggable: true,
+        multipleDrag: true,
+        threshold: 20,
+        loop: false,
+        rtl: false,
+        onInit: () => {
+
+        },
+        onChange: () => {
+
+        },
+    });
 }
 
 
