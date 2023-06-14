@@ -3,9 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: hidden;
+  padding: 10px;
 
   @include tablet {
     max-width: 90%;
+    margin: 0 auto;
   }
 
   @include mobile-large {
@@ -15,18 +18,14 @@
   &__item {
     padding: 15px;
     width: 50%;
+    margin: 0 auto;
+
+    @include laptop {
+      padding: 10px;
+    }
 
     @include mobile-large {
       width: 100%;
-    }
-
-    &:nth-child(2n - 1) {
-      display: flex;
-      justify-content: flex-end;
-
-      @include mobile-large {
-        justify-content: flex-start;
-      }
     }
   }
 }

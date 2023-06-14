@@ -33,7 +33,7 @@ function onCardClick(e) {
             </svg>
             <div class="modal__left">
                 <div class="siema">
-                <div class="modal__img">
+                    <div class="modal__img">
                         <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
                     </div>
                      <div class="modal__img">
@@ -117,10 +117,10 @@ function onCardClick(e) {
 
             angleLeft.addEventListener('click', () => {
                 siema.prev(1);
-            })
+            });
             angleRight.addEventListener('click', () => {
                 siema.next(1);
-            })
+            });
         },
         onClose: (instance) => {
             body.classList.remove('no-scroll')
@@ -134,19 +134,33 @@ function onCardClick(e) {
         duration: 200,
         easing: 'ease-out',
         perPage: 1,
-        startIndex: 0,
+        startIndex: 1,
         draggable: true,
         multipleDrag: true,
         threshold: 20,
         loop: false,
         rtl: false,
         onInit: () => {
-
         },
         onChange: () => {
+            const angleLeft = instance.element().querySelector('.modal__angle--left');
+            const angleRight = instance.element().querySelector('.modal__angle--right');
+            const siemaChildrenCount = document.querySelector('.siema > div').children.length - 1;
 
+            if (siemaChildrenCount === siema.currentSlide) {
+                angleRight.style.display = 'none';
+            } else {
+                angleRight.style.display = 'block';
+            }
+
+            if (siema.currentSlide === 0) {
+                angleLeft.style.display = 'none';
+            } else {
+                angleLeft.style.display = 'block';
+            }
         },
     });
+
 }
 
 

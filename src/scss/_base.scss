@@ -21,6 +21,10 @@ body {
 
 main {
   padding: 40px 0;
+
+  @include mobile-large {
+    padding: 30px 0;
+  }
 }
 
 footer {

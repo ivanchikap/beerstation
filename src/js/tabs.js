@@ -14,7 +14,6 @@ tabs.forEach(tab => {
     });
 
     function selectTabContent(tabName) {
-        console.log(tabName);
         tabContent.forEach(item => {
             item.classList.contains(tabName) ? item.classList.add("active") : item.classList.remove("active");
 
