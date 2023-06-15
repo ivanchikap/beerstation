@@ -1,4 +1,5 @@
 import Siema from 'siema';
+import products from '../products.json';
 
 const cards = document.querySelectorAll('.card');
 
@@ -13,9 +14,8 @@ function onCardClick(e) {
 
     const body = document.body;
     const card = e.currentTarget;
-    const cardImgSrc = card.querySelector('.js-img').src;
-    const cardImgAlt = card.querySelector('.js-img').alt
-    const title = card.querySelector('.card__title').textContent;
+    const clickedProduct = card.dataset.name;
+    const productInfo = products[clickedProduct];
 
     if (!(e.target.classList.contains('js-img')
         || e.target.classList.contains('card__img')
@@ -27,21 +27,30 @@ function onCardClick(e) {
 
     body.classList.add('no-scroll');
 
+
+    const imagesTemplate = productInfo.modalImages.reduce((acc, img) => {
+        acc += ` 
+             <div class="modal__img">
+                <img class="js-img" src=${img.src} alt=${img.alt}>
+            </div>
+        `;
+        return acc;
+    }, '');
+
+    const descriptionTemplate = productInfo.desc.reduce((acc, paragraph) => {
+        acc += `<p>${paragraph}</p>`
+        return acc;
+    }, '');
+
+    const testimonialClass = productInfo.typeof !== 'alcohol' ? 'd-none' : 'modal__testimonial';
+
     const instance = basicLightbox.create(`        
         <div class="modal">
             <svg class="modal__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/>
             </svg>
             <div class="modal__left">
-                <div class="siema">
-                    <div class="modal__img">
-                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
-                    </div>
-                     <div class="modal__img">
-                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
-                    </div>
-                     <div class="modal__img">
-                        <img class="js-img" src="${cardImgSrc}" alt="${cardImgAlt}">
-                    </div>     
+                <div class="siema">                   
+                    ${imagesTemplate}; 
                 </div>   
                 <div class="modal__angle modal__angle--left">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
@@ -54,18 +63,18 @@ function onCardClick(e) {
             </div>
             
             <div class="modal__right">
-                <h2 class="modal__title">${title}</h2>
-                <h3 class="modal__beertype">Уманьпиво, світле нефільтроване</h3>
+                <h2 class="modal__title">${productInfo.title}</h2>
+                <h3 class="modal__beertype">${productInfo.subtitle}</h3>
                 
                  <div class="modal__price-wrapper">
                      <div class="modal__price">
-                       <span>64₴</span>
+                       <span>${productInfo.price}₴</span>
                        <span>за 1кг</span>
                      </div>                   
                       <button class="btn btn--default">Придбати</button>
                  </div>
                     
-                <div class="modal__testimonial">
+                <div class=${testimonialClass}>
                   <div class="modal__test-item">
                     <h6 class="modal__test-title">Міцність</h6>
                     <p class="modal__test-value">5 %</p>
@@ -90,9 +99,7 @@ function onCardClick(e) {
                 </div>
                 <!--/card__testimonial-->
                 <div class="modal__description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet autem dignissimos dolor dolore et explicabo fugiat hic incidunt neque nostrum nulla quas quia, recusandae rem repellendus tempore voluptate?</p>
+                   ${descriptionTemplate}
                 </div>
             </div>
         </div>
@@ -111,16 +118,6 @@ function onCardClick(e) {
                     instance.close();
                 }
             };
-
-            const angleLeft = instance.element().querySelector('.modal__angle--left');
-            const angleRight = instance.element().querySelector('.modal__angle--right');
-
-            angleLeft.addEventListener('click', () => {
-                siema.prev(1);
-            });
-            angleRight.addEventListener('click', () => {
-                siema.next(1);
-            });
         },
         onClose: (instance) => {
             body.classList.remove('no-scroll')
@@ -129,37 +126,59 @@ function onCardClick(e) {
 
     instance.show();
 
-    const siema = new Siema({
-        selector: '.siema',
-        duration: 200,
-        easing: 'ease-out',
-        perPage: 1,
-        startIndex: 1,
-        draggable: true,
-        multipleDrag: true,
-        threshold: 20,
-        loop: false,
-        rtl: false,
-        onInit: () => {
-        },
-        onChange: () => {
+
+    //siema - it is slider in modal
+
+    setTimeout(() => {
+        const siema = new Siema({
+            selector: '.siema',
+            duration: 200,
+            easing: 'ease-out',
+            perPage: 1,
+            startIndex: 0,
+            draggable: true,
+            multipleDrag: true,
+            threshold: 20,
+            loop: false,
+            rtl: false,
+            onInit: () => {
+                handleArrows();
+            },
+            onChange: () => {
+                handleArrows();
+            },
+        });
+
+        function handleArrows() {
             const angleLeft = instance.element().querySelector('.modal__angle--left');
             const angleRight = instance.element().querySelector('.modal__angle--right');
-            const siemaChildrenCount = document.querySelector('.siema > div').children.length - 1;
+            const siemaChildrenCount = instance.element().querySelector('.siema > div').children.length - 1;
+            setTimeout(() => {
+                if (siemaChildrenCount === siema.currentSlide) {
+                    angleRight.style.display = 'none';
+                } else {
+                    angleRight.style.display = 'block';
+                }
 
-            if (siemaChildrenCount === siema.currentSlide) {
-                angleRight.style.display = 'none';
-            } else {
-                angleRight.style.display = 'block';
-            }
+                if (siema.currentSlide === 0) {
+                    angleLeft.style.display = 'none';
+                } else {
+                    angleLeft.style.display = 'block';
+                }
+            }, 10)
+        }
 
-            if (siema.currentSlide === 0) {
-                angleLeft.style.display = 'none';
-            } else {
-                angleLeft.style.display = 'block';
-            }
-        },
-    });
+        const angleLeft = instance.element().querySelector('.modal__angle--left');
+        const angleRight = instance.element().querySelector('.modal__angle--right');
+
+        angleLeft.addEventListener('click', () => {
+            siema.prev(1);
+        });
+        angleRight.addEventListener('click', () => {
+            siema.next(1);
+        });
+    }, 100)
+
 
 }
 

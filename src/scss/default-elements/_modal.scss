@@ -40,19 +40,24 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50);
-    fill: rgba(#fff, .6);
-    width: 24px;
-    transition: fill .2s linear;
+    background-color: #bbb;
+    padding: 6px 4px;
+    fill: rgba(#fff, .7);
+    width: 28px;
+    transition: fill .2s linear, background-color .2s linear;
 
     &--left {
       left: 8px;
+      border-radius: 10px 0 0 10px;
     }
 
     &--right {
       right: 8px;
+      border-radius: 0 10px 10px 0;
     }
 
     &:hover {
+      background-color: #999;
       fill: #fff;
     }
   }
@@ -100,7 +105,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 70% center;
+      object-position: center center;
     }
   }
 
@@ -125,7 +130,6 @@
     &::-webkit-scrollbar-thumb {
       background-color: darken($secondary-color, 10%);
       border-radius: 28px;
-      //border: 3px solid orange;
     }
 
     @include tablet {
@@ -213,5 +217,12 @@
     h1, h2, h3, h4, h5, h6, p, pre, div, table, iframe, blockquote, dl, ul, ol {
       margin-bottom: 8px;
     }
+  }
+  
+  .someclass {
+    background-image: url("../../img/lemonade-m.jpg"), url("../../img/lemonade-m1.jpg"), url("../../img/cidre-logo-m.png"), url("../../img/cidr-strawberry-m.jpg");
+  }
+  .someclass1 {
+    background-image:url("../../img/cidre-logo-m.jpg"),  url("../../img/cidre-manho-persyk.jpg"), url("../../img/cidr-cactus.jpg"), url("../../img/cidre-medusa.jpg");
   }
 }
