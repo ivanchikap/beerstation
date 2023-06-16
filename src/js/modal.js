@@ -15,7 +15,12 @@ function onCardClick(e) {
     const body = document.body;
     const card = e.currentTarget;
     const clickedProduct = card.dataset.name;
-    const productInfo = products[clickedProduct];
+
+    const objOfProducts = products.reduce((acc, product) => {
+        acc[product.name] = product;
+        return acc;
+    }, {});
+    const productInfo = objOfProducts[clickedProduct];
 
     if (!(e.target.classList.contains('js-img')
         || e.target.classList.contains('card__img')
@@ -42,7 +47,20 @@ function onCardClick(e) {
         return acc;
     }, '');
 
-    const testimonialClass = productInfo.typeof !== 'alcohol' ? 'd-none' : 'modal__testimonial';
+    const maxAlcohol = 16;
+    const maxBitterness = 40;
+    const maxDensity = 40;
+
+    const alcoholPercentage = Math.round((productInfo.alcohol / maxAlcohol)*100) || 0;
+    const alcoholStyle = `width: ${alcoholPercentage}%`;
+
+    const bitternessPercentage = Math.round((productInfo.bitterness / maxBitterness)*100) || 0;
+    const bitternessStyle = `width: ${bitternessPercentage}%`;
+
+    const densityPercentage = Math.round((productInfo.density / maxDensity)*100) || 0;
+    const densityStyle = `width: ${densityPercentage}%`;
+
+    const testimonialClass = productInfo.type !== 'alcohol' ? 'd-none' : 'modal__testimonial';
 
     const instance = basicLightbox.create(`        
         <div class="modal">
@@ -75,27 +93,27 @@ function onCardClick(e) {
                  </div>
                     
                 <div class=${testimonialClass}>
-                  <div class="modal__test-item">
-                    <h6 class="modal__test-title">Міцність</h6>
-                    <p class="modal__test-value">5 %</p>
-                    <div class="modal__test-progress">
-                      <div style="width: 30%"  class="modal__test-progress-value"></div>
-                    </div>
-                  </div>
-                  <div class="modal__test-item">
-                    <h6 class="modal__test-title">Гіркота</h6>
-                    <p class="modal__test-value">16</p>
-                    <div class="modal__test-progress">
-                      <div style="width: 60%"  class="modal__test-progress-value"></div>
-                    </div>
-                  </div>
-                  <div class="modal__test-item">
-                    <h6 class="modal__test-title">Щільність</h6>
-                    <p class="modal__test-value">13 %</p>
-                    <div class="modal__test-progress">
-                      <div style="width: 80%"  class="modal__test-progress-value"></div>
-                    </div>
-                  </div>
+                  <div class="card__test-item">
+                        <h6 class="card__test-title">Міцність</h6>
+                        <p class="card__test-value">${productInfo.alcohol || '0'} %</p>
+                        <div class="card__test-progress">
+                          <div style='${alcoholStyle}'  class="card__test-progress-value"></div>
+                        </div>
+                      </div>
+                      <div class="card__test-item">
+                        <h6 class="card__test-title">Гіркота</h6>
+                        <p class="card__test-value">${productInfo.bitterness || '0'} IBU</p>
+                        <div class="card__test-progress">
+                          <div style='${bitternessStyle}'  class="card__test-progress-value"></div>
+                        </div>
+                      </div>
+                      <div class="card__test-item">
+                        <h6 class="card__test-title">Щільність</h6>
+                        <p class="card__test-value">${productInfo.density || '0'} %</p>
+                        <div class="card__test-progress">
+                          <div style='${densityStyle}'  class="card__test-progress-value"></div>
+                        </div>
+                      </div>
                 </div>
                 <!--/card__testimonial-->
                 <div class="modal__description">
@@ -129,57 +147,53 @@ function onCardClick(e) {
 
     //siema - it is slider in modal
 
-    setTimeout(() => {
-        const siema = new Siema({
-            selector: '.siema',
-            duration: 200,
-            easing: 'ease-out',
-            perPage: 1,
-            startIndex: 0,
-            draggable: true,
-            multipleDrag: true,
-            threshold: 20,
-            loop: false,
-            rtl: false,
-            onInit: () => {
-                handleArrows();
-            },
-            onChange: () => {
-                handleArrows();
-            },
-        });
+    const siema = new Siema({
+        selector: '.siema',
+        duration: 200,
+        easing: 'ease-out',
+        perPage: 1,
+        startIndex: 0,
+        draggable: true,
+        multipleDrag: true,
+        threshold: 20,
+        loop: false,
+        rtl: false,
+        onInit: () => {
+            handleArrows();
+        },
+        onChange: () => {
+            handleArrows();
+        },
+    });
 
-        function handleArrows() {
-            const angleLeft = instance.element().querySelector('.modal__angle--left');
-            const angleRight = instance.element().querySelector('.modal__angle--right');
-            const siemaChildrenCount = instance.element().querySelector('.siema > div').children.length - 1;
-            setTimeout(() => {
-                if (siemaChildrenCount === siema.currentSlide) {
-                    angleRight.style.display = 'none';
-                } else {
-                    angleRight.style.display = 'block';
-                }
-
-                if (siema.currentSlide === 0) {
-                    angleLeft.style.display = 'none';
-                } else {
-                    angleLeft.style.display = 'block';
-                }
-            }, 10)
-        }
-
+    function handleArrows() {
         const angleLeft = instance.element().querySelector('.modal__angle--left');
         const angleRight = instance.element().querySelector('.modal__angle--right');
+        const siemaChildrenCount = instance.element().querySelector('.siema > div').children.length - 1;
+        setTimeout(() => {
+            if (siemaChildrenCount === siema.currentSlide) {
+                angleRight.style.display = 'none';
+            } else {
+                angleRight.style.display = 'block';
+            }
 
-        angleLeft.addEventListener('click', () => {
-            siema.prev(1);
-        });
-        angleRight.addEventListener('click', () => {
-            siema.next(1);
-        });
-    }, 100)
+            if (siema.currentSlide === 0) {
+                angleLeft.style.display = 'none';
+            } else {
+                angleLeft.style.display = 'block';
+            }
+        }, 10)
+    }
 
+    const angleLeft = instance.element().querySelector('.modal__angle--left');
+    const angleRight = instance.element().querySelector('.modal__angle--right');
 
+    angleLeft.addEventListener('click', () => {
+        siema.prev(1);
+    });
+    angleRight.addEventListener('click', () => {
+        siema.next(1);
+    });
 }
 
 
