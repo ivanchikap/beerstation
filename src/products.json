@@ -5,7 +5,9 @@
     "imgPreview": "img/limonad.jpg",
     "title": "Напій безалкогольний «Лимонад» в кегах",
     "subtitle": "Вінницька харчосмакова фабрика",
-    "price": "34",
+    "price": "27₴",
+    "metering": "1кг",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/lemonade-m.jpg",
@@ -23,13 +25,65 @@
     ]
   },
   {
+    "name": "mohito",
+    "type": "ba",
+    "imgPreview": "img/mohito.jpg",
+    "title": "Напій безалкогольний «Мохіто» в кегах",
+    "subtitle": "Вінницька харчосмакова фабрика",
+    "price": "27₴",
+    "metering": "1кг",
+    "isInShop": "true",
+    "modalImages": [
+      {
+        "src": "img/mohito-1.jpg",
+        "alt": "мохіто,зображення"
+      },
+      {
+        "src": "img/mohito-m.jpg",
+        "alt": "мохіто,зображення"
+      }
+    ],
+    "desc": [
+      "Мохіто — натуральний газирований напій на основі соку лайма та м’яти.",
+      "Батьківщина напою Мохіто — Куба, де він вважається неофіційним національним напоєм. Комбінація солодкого та освіжаючого цитрусу з м’ятою робить цей напій одним з найпопулярніших літніх напоїв у світі.",
+      "Ми пропонуємо Вам насолодитися чудовим смаком освіжаючого напою, який чудово втамовує спрагу."
+    ]
+  },
+  {
+    "name": "kvas",
+    "type": "ba",
+    "imgPreview": "img/kvas.jpg",
+    "title": "Квас «Хлібний» в кегах",
+    "subtitle": "Вінницька харчосмакова фабрика",
+    "price": "30₴",
+    "metering": "1кг",
+    "isInShop": "true",
+    "modalImages": [
+      {
+        "src": "img/kvas-m.jpg",
+        "alt": "мохіто,зображення"
+      },
+      {
+        "src": "img/kvas-1.jpg",
+        "alt": "мохіто,зображення"
+      }
+    ],
+    "desc": [
+      "Квас — безалкогольний напій, що ідеально утамовує спрагу. По смакових і поживних властивостях квас перевершує усі напої.",
+      "Вперше квас був виготовлений більше тисячі років тому, але і в наші дні залишається дуже популярним.",
+      "Квас, виготовлений із зернової сировини, має не тільки відмінні смакові якості, але і нормалізує процеси обміну в організмі людини, регулює діяльність шлунково-кишкового тракту, перешкоджає розмноженню шкідливих мікробів, позитивно впливає на сердечно-судинну систему."
+    ]
+  },
+  {
     "name": "cidr-strawberry",
     "type": "alcohol",
     "imgPreview": "img/cidre-logo.png",
     "title": "Cidre Royal з Полуницею",
     "subtitle": "Роял Фрут Гарден, солодкий сидр",
     "alcohol": "5",
-    "price": "64",
+    "price": "55₴",
+    "metering": "1кг",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/cidr-strawberry-m.jpg",
@@ -48,10 +102,12 @@
     "name": "cidr-mango-peach",
     "type": "alcohol",
     "imgPreview": "img/cidre-logo.png",
-    "title": "Cidre Royal Манго-Персик",
+    "title": "Cidre Royal, Манго-Персик",
     "subtitle": "Роял Фрут Гарден, кисло-солодкий сидр",
     "alcohol": "5",
-    "price": "64",
+    "price": "55₴",
+    "metering": "1кг",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/cidre-manho-persyk.jpg",
@@ -69,18 +125,16 @@
   {
     "name": "cidr-cactus",
     "type": "alcohol",
-    "imgPreview": "img/cidre-logo.png",
-    "title": "Cidre Royal Кактус",
-    "subtitle": "Роял Фрут Гарден, пікантний та яскравий смаковий букет",
+    "imgPreview": "img/kaktus.png",
+    "title": "Сидр ЕДЕМ, лонгер Кактус",
+    "subtitle": "Пікантний та яскравий смаковий букет",
     "alcohol": "5",
-    "price": "62",
+    "price": "55₴",
+    "metering": "1кг",
+    "isInShop": "true",
     "modalImages": [
       {
-        "src": "img/cidr-cactus.jpg",
-        "alt": "сидр,зображення"
-      },
-      {
-        "src": "img/cidre-logo-m.png",
+        "src": "img/kaktus-m.png",
         "alt": "сидр,зображення"
       }
     ],
@@ -92,10 +146,12 @@
     "name": "cidr-medusa",
     "type": "alcohol",
     "imgPreview": "img/cidre-logo.png",
-    "title": "Cidre Royal - Медуза",
+    "title": "Cidre Royal, фруктель Медуза",
     "subtitle": "Роял Фрут Гарден, пікантний та яскравий сидр",
-    "alcohol": "6",
-    "price": "58",
+    "alcohol": "5",
+    "price": "55₴",
+    "metering": "1кг",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/cidre-medusa.jpg",
@@ -111,12 +167,40 @@
     ]
   },
   {
+    "name": "cidr-fragolino",
+    "type": "alcohol",
+    "imgPreview": "img/cidre-logo.png",
+    "title": "Cidre Royal, фраголіно",
+    "subtitle": "Роял Фрут Гарден, купажний напівсолодкий сидр",
+    "alcohol": "5",
+    "price": "55₴",
+    "metering": "1кг",
+    "isInShop": "true",
+    "modalImages": [
+      {
+        "src": "img/fragolino-m.jpg",
+        "alt": "сидр,зображення"
+      },
+      {
+        "src": "img/cidre-logo-m.png",
+        "alt": "сидр,зображення"
+      }
+    ],
+    "desc": [
+      "Fragolino Cidre Royal - якісний розливний сидр. Історія створення сидру Fragolino Cidre Royal бере свій початок у мальовничому місті Золотоноша, розташованому в центральній частині України. Оточений садами та фруктовими плантаціями, Золотоноша стала ідеальним місцем для розвитку виробництва сидру.",
+      "Створення сидру Fragolino Cidre Royal почалося з акуратного відбору сортів яблук та вивчення їх характеристик. Було розроблено рецепт, заснований на традиційних методах виробництва сидру, а також впроваджено інноваційні рішення, що дозволяють досягти виняткового смаку та аромату напою.",
+      "Процес виробництва сидру Fragolino Cidre Royal суворо контролюється на всіх етапах - від збирання яблук до розливу напою в кегі. Використовується лише свіжий сік високоякісних яблук, а також передові технології та обладнання для ферментації, дозрівання та фільтрації сидру."
+    ]
+  },
+  {
     "name": "chips-assortment",
     "type": "appetizer",
     "imgPreview": "img/chips.jpg",
     "title": "Чіпси в асортименті",
     "subtitle": "Сіль, сир, бекон, паприка",
-    "price": "25",
+    "price": "25₴",
+    "metering": "1уп",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/chips-m.jpg",
@@ -138,7 +222,9 @@
     "imgPreview": "img/bocal.jpg",
     "title": "Келих для пива Франциск Spiegelau Beer Classics 500 мл",
     "subtitle": "Гарний подарунок для поціновувачів вишуканого посуду.",
-    "price": "50",
+    "price": "50₴",
+    "metering": "1шт",
+    "isInShop": "true",
     "modalImages": [
       {
         "src": "img/bocal.jpg",

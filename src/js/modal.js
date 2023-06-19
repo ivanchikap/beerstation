@@ -86,7 +86,7 @@ function onCardClick(e) {
                 
                  <div class="modal__price-wrapper">
                      <div class="modal__price">
-                       <span>${productInfo.price}₴</span>
+                       <span>${productInfo.price}</span>
                        <span>за 1кг</span>
                      </div>                   
                       <button class="btn btn--default">Придбати</button>
