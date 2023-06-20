@@ -97,6 +97,10 @@
     width: 100%;
     height: 100%;
 
+    @include tablet {
+      padding: 20px 0 0 0;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -223,6 +227,6 @@
     background-image: url("../../img/lemonade-m.jpg"), url("../../img/lemonade-m1.jpg"), url("../../img/cidre-logo-m.png"), url("../../img/cidr-strawberry-m.jpg");
   }
   .someclass1 {
-    background-image:url("../../img/cidre-logo-m.jpg"),  url("../../img/cidre-manho-persyk.jpg"), url("../../img/cidr-cactus.jpg"), url("../../img/cidre-medusa.jpg"), url("../../img/bocal.jpg"), url("../../img/chips.jpg"), url("../../img/chips-m.jpg"), url("../../img/limonad.jpg"), url("../../img/cidre-logo.png"), url("../../img/limonad-m2.jpg"), url("../../img/mohito.jpg"), url("../../img/mohito-1.jpg"), url("../../img/mohito-m.jpg"), url("../../img/kvas.jpg"), url("../../img/kvas-1.jpg"), url("../../img/kvas-m.jpg"), url("../../img/kaktus-m.png"), url("../../img/kaktus.png"), url("../../img/fragolino-m.jpg");
+    background-image:url("../../img/cidre-logo-m.jpg"),  url("../../img/cidre-manho-persyk.jpg"), url("../../img/cidr-cactus.jpg"), url("../../img/cidre-medusa.jpg"), url("../../img/bocal.jpg"), url("../../img/chips.jpg"), url("../../img/chips-m.jpg"), url("../../img/limonad.jpg"), url("../../img/cidre-logo.png"), url("../../img/limonad-m2.jpg"), url("../../img/mohito.jpg"), url("../../img/mohito-1.jpg"), url("../../img/mohito-m.jpg"), url("../../img/kvas.jpg"), url("../../img/kvas-1.jpg"), url("../../img/kvas-m.jpg"), url("../../img/kaktus-m.png"), url("../../img/kaktus.png"), url("../../img/fragolino-m.jpg"), url("../../img/cheske-m.jpg"), url("../../img/cheske.jpg"), url("../../img/cheske-m1.jpg"), url("../../img/opillia-m.jpg"), url("../../img/opillia-m1.jpg"), url("../../img/opillia.jpg"), url("../../img/berdychiv-m.jpg"), url("../../img/berdychiv-m1.jpeg"), url("../../img/berdychiv.png"), url("../../img/bierwelle.png"), url("../../img/bierwelle-m.JPG"), url("../../img/bierwelle-m1.jpg"), url("../../img/blanche-de-kyiv-m.jpg"), url("../../img/blanche-de-kyiv.jpg"), url("../../img/blanche-de-kyiv-m1.jpg"),url("../../img/waissburg-lager-m1.jpg"), url("../../img/uman-medove-m-1.jpg"), url("../../img/uman-medove-m.jpg"), url("../../img/uman-medove.jpg"), url("../../img/weissburg-dunkel.jpg"), url("../../img/waissburg-dunke-m1.png"), url("../../img/waissburg-dunkel-m.png"), url("../../img/waissburg-blanche-m.JPG"), url("../../img/wasiiburg-blanche-m1.jpeg"), url("../../img/waiisburg-blanche.jpg"), url("../../img/waissburg-lager-m.jpg"), url("../../img/waissburg-lager.jpg"), url("../../img/hmelpyvo-m.jpg"), url("../../img/hmelpyvo-m1.png"), url("../../img/hmelpyvo.JPG");
   }
 }
