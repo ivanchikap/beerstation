@@ -16,7 +16,8 @@
   }
 
   @include mobile {
-    width: 96%;
+    width: 90%;
+    max-width: 420px;
   }
 
   &__close {
@@ -63,13 +64,16 @@
     }
   }
 
-  $siema-width: 540px;
-
   &__left {
     position: relative;
-    width: $siema-width;
+    width: 500px;
+    flex-shrink: 0;
     min-height: 100%;
     overflow: hidden;
+
+    @include laptop {
+      width: 400px;
+    }
 
     @include tablet {
       width: 100%;
@@ -80,8 +84,8 @@
     }
 
     @include mobile {
-      min-height: 280px;
-      height: 280px;
+      min-height: 460px;
+      height: 460px;
     }
 
     .siema {
@@ -101,6 +105,14 @@
       padding: 20px 0 0 0;
     }
 
+    @include mobile-large {
+      padding: 10px 0 0 0;
+    }
+
+    @include mobile {
+      padding: 0;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -110,11 +122,14 @@
       @include tablet {
         object-fit: contain;
       }
+
+      @include mobile {
+        object-fit: cover;
+      }
     }
   }
 
   &__right {
-    width: calc(100% - $siema-width);
     padding: 20px;
     max-height: 100%;
     overflow-y: auto;
@@ -224,7 +239,7 @@
   }
   
   .someclass {
-    background-image: url("../../img/lemonade-m.jpg"), url("../../img/lemonade-m1.jpg"), url("../../img/cidre-logo-m.png"), url("../../img/cidr-strawberry-m.jpg");
+    background-image: url("../../img/lemonade-m.jpg"), url("../../img/lemonade-m1.jpg"), url("../../img/cidre-logo-m.png"), url("../../img/cidr-strawberry-m.jpg"), url("../../img/bocal.jpg"), url("../../img/bocal-m.jpg"), url("../../img/bocal-m1.jpg"), url("../../img/grinky.jpg"), url("../../img/grinky-m.jpg"), url("../../img/grinky-craft-m.jpg"), url("../../img/grinky-craft.jpg"), url("../../img/grinky-domashni-m.jpg"), url("../../img/grinky-domashni-m1.jpg"), url("../../img/grinky-domashni.jpg"), url("../../img/vuha-m.jpg"), url("../../img/vuha-m1.jpg"), url("../../img/vuha-m2.jpg"), url("../../img/vuha-m.jpg"), url("../../img/vuha.jpg"), url("../../img/vuha-m3.jpg"), url("../../img/anchous-m.jpg"), url("../../img/anchous-m1.jpg"), url("../../img/anchous.JPG"), url("../../img/arahis-m.jpg"), url("../../img/arahis.jpg"), url("../../img/gustira-m.jpg"), url("../../img/gustira-m1.jpg"), url("../../img/gustira.jpg"), url("../../img/smugastyk-m.jpg"), url("../../img/smugastyk-m1.JPG"), url("../../img/smugastyk.JPG"),  url("../../img/taran-m.jpg"),  url("../../img/taran-m1.jpg"),  url("../../img/taran.jpg"), url("../../img/ikra-sudaka.JPG"), url("../../img/ikra-sudaka-m.jpg"), url("../../img/ikra-sudaka-m1.jpg"), url("../../img/ikrianyk-norvezkyi-m.jpg"), url("../../img/ikrianyk-norvezkyi-m1.jpg"), url("../../img/ikrianyk-norvezkyi.jpg"), url("../../img/kabanosy-m.jpg"), url("../../img/kabanosy-m1.jpg"), url("../../img/kabanosy.jpg"), url("../../img/kalmar-struzhka-m.jpg"), url("../../img/kalmar-struzhka.jpg"), url("../../img/kalmar-struzhka-m1.jpg"), url("../../img/kalmar-struzhka-krab-m.jpg"), url("../../img/kalmar-struzhka-krab-m1.jpg"), url("../../img/kalmar-struzhka-krab.jpg"), url("../../img/kilce-kalmara-m.jpg"), url("../../img/kilce-kalmara-m1.jpg"), url("../../img/kilce-kalmara.jpg"), url("../../img/koriushka-m.jpg"), url("../../img/koriushka-m1.jpg"), url("../../img/koriushka.jpg"), url("../../img/kranch-m.jpg"), url("../../img/kranch-m1.jpg"), url("../../img/kranch-m2.jpg"), url("../../img/kranch.jpg"), url("../../img/kukurudza-m.jpg"), url("../../img/kukurudza-m1.jpg"), url("../../img/kukurudza.jpg"), url("../../img/pautynka-kalmara-m.jpg"), url("../../img/pautynka-kalmara-m1.jpg"), url("../../img/pautynka-kalmara.jpg"), url("../../img/kalmar-peruanskyi-m.jpg"), url("../../img/kalmar-peruanskyi-m1.jpg"), url("../../img/kalmar-peruanskyi.jpg"),  url("../../img/plitka-m.jpg"), url("../../img/plitka-m1.jpg"), url("../../img/plitka.jpg");
   }
   .someclass1 {
     background-image:url("../../img/cidre-logo-m.jpg"),  url("../../img/cidre-manho-persyk.jpg"), url("../../img/cidr-cactus.jpg"), url("../../img/cidre-medusa.jpg"), url("../../img/bocal.jpg"), url("../../img/chips.jpg"), url("../../img/chips-m.jpg"), url("../../img/limonad.jpg"), url("../../img/cidre-logo.png"), url("../../img/limonad-m2.jpg"), url("../../img/mohito.jpg"), url("../../img/mohito-1.jpg"), url("../../img/mohito-m.jpg"), url("../../img/kvas.jpg"), url("../../img/kvas-1.jpg"), url("../../img/kvas-m.jpg"), url("../../img/kaktus-m.png"), url("../../img/kaktus.png"), url("../../img/fragolino-m.jpg"), url("../../img/cheske-m.jpg"), url("../../img/cheske.jpg"), url("../../img/cheske-m1.jpg"), url("../../img/opillia-m.jpg"), url("../../img/opillia-m1.jpg"), url("../../img/opillia.jpg"), url("../../img/berdychiv-m.jpg"), url("../../img/berdychiv-m1.jpeg"), url("../../img/berdychiv.png"), url("../../img/bierwelle.png"), url("../../img/bierwelle-m.JPG"), url("../../img/bierwelle-m1.jpg"), url("../../img/blanche-de-kyiv-m.jpg"), url("../../img/blanche-de-kyiv.jpg"), url("../../img/blanche-de-kyiv-m1.jpg"),url("../../img/waissburg-lager-m1.jpg"), url("../../img/uman-medove-m-1.jpg"), url("../../img/uman-medove-m.jpg"), url("../../img/uman-medove.jpg"), url("../../img/weissburg-dunkel.jpg"), url("../../img/waissburg-dunke-m1.png"), url("../../img/waissburg-dunkel-m.png"), url("../../img/waissburg-blanche-m.JPG"), url("../../img/wasiiburg-blanche-m1.jpeg"), url("../../img/waiisburg-blanche.jpg"), url("../../img/waissburg-lager-m.jpg"), url("../../img/waissburg-lager.jpg"), url("../../img/hmelpyvo-m.jpg"), url("../../img/hmelpyvo-m1.png"), url("../../img/hmelpyvo.JPG");
