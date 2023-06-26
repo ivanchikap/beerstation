@@ -9,7 +9,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 22px;
     font-family: $montserrat;
 
     @include tablet {
@@ -22,8 +21,8 @@
   }
 
   &__info {
-    max-width: calc(80% - 130px);
-    padding: 0 14px;
+    max-width: calc(82% - 130px);
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +49,7 @@
   }
 
   &__icon {
-    height: 24px;
+    height: 20px;
     margin-right: 6px;
     fill: #333;
     flex-shrink: 0;
@@ -68,8 +67,7 @@
   &__item {
     @extend .flex-items-center;
     transition: color .2s linear;
-    padding-right: 20px;
-    max-width: 50%;
+    padding-right: 12px;
 
     @include laptop {
       padding-right: 0;
@@ -90,9 +88,8 @@
 
     &:last-child {
       padding-right: 0;
-      padding-left: 20px;
+      padding-left: 12px;
       border-left: 1px dashed #333;
-      max-width: 60%;
 
       @include laptop {
         border-left: none;
@@ -122,7 +119,7 @@
 
   &__time {
     @extend .flex-items-center;
-    max-width: 20%;
+    max-width: 18%;
 
     @include tablet {
       max-width: 22%;

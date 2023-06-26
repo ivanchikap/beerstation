@@ -1,5 +1,5 @@
 const body = document.body;
-body.style.display = 'flex';
+body.style.display = 'block';
 import './scss/style.scss';
 import './index.html';
 import './js/sort';
