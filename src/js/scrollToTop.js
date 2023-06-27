@@ -1,15 +1,17 @@
+import { debounce } from "debounce";
 const arrow = document.querySelector('#to-top');
 const header = document.querySelector('.header');
 
 const headerHeight = header.clientHeight;
 let scrollOffset = document.documentElement.scrollTop;
 checkScroll(scrollOffset);
-window.addEventListener('scroll', (e) => {
-    scrollOffset = document.documentElement.scrollTop;
-    console.log(scrollOffset);
+window.addEventListener('scroll', debounce(onScroll, 300));
 
+function onScroll() {
+    scrollOffset = document.documentElement.scrollTop;
     checkScroll(scrollOffset);
-});
+}
+
 
 function checkScroll(scrollOffset) {
     if (scrollOffset >= headerHeight + 150) {
